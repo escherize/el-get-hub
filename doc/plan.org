@@ -1,0 +1,42 @@
+* ElGetHub
+
+** links:
+[[http://stackoverflow.com/questions/454259/what-do-you-expect-from-a-package-manager-for-emacs][Market Research]]
+[[http://couchdb.apache.org/][Couch DB]]
+
+** Problem: Emacs package managment sucks.
+Solution: El-get is the answer
+*** why el-get?
+Emacs configs are brittle and fragile.
+What works on one machine will not just-work on another.
+We'll cover using el-get to setup a bulletproof config that is stable,
+  portable, extensible, and well-documented.
+Next we'll cover the recipe-based emacs package archive that I plan to create
+  for beginners and users who are tired of brittle emacs package installation.
+(M)ELPA can break your shit.
+Stable MELPA needs people to actually publish to it.
+
+
+** Problem: There's nowhere to checkout all the cool el-get recipes.
+Solution: El-Get Hub, a place to share that stuff.
+
+* TODO possible features
+Search
+Upvotes?
+Categories/Tags
+Comments
+Popularity Rankings
+Meta-packages (bundles of packages)
+User profiles
+
+* challenges:
+** TODO dependancies during setup - :after
+1. John sets his recipe to (progn (global-key-chord 'jk 'print-screen))
+2. Josh uses recipe 1, but doesnt have key-chords. now what?
+*** Use :dependancies in recipes.
+how to programatically enforce?
+
+** TODO keyboard-key collisions
+v1. John sets M-/ to be auto-complete in his auto-complete recipe
+2. Jane sets M-/ to be align-regexp in her alignment-is-awesome recipe
+3. Josh uses recipe 1 and 2, and hits M-/. now what?
