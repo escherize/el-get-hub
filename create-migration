@@ -1,0 +1,19 @@
+#!/bin/sh
+
+MIGRATIONS_ROOT=pg_migrations
+
+edit_migration() {
+  date=$(date +%Y%m%d%H%M%S)
+  migration_name=$(echo ${1} | tr '' '-')
+  upfile=${MIGRATIONS_ROOT}/migrate-${date}-${migration_name}.sql;
+  downfile=${MIGRATIONS_ROOT}/rollback-${date}-${migration_name}.sql;
+  touch ${upfile} ${downfile}
+  echo Created ${upfile} ${downfile}
+}
+
+if [ -z "$1" ]; then
+  echo "Usage: $0 [migration-name]";
+  exit 1
+fi
+
+edit_migration ${1}
