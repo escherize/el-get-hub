@@ -1,10 +1,34 @@
 (ns elgethub.schema
   (:require [schema.core :as s]))
 
+(declare Min-Recipe Full-Recipe-Spec)
+
+(def Recipe 
+  (s/either Min-Recipe Full-Recipe-Spec))
+
+(def Min-Recipe
+  {:name s/Str
+   :recipe-str s/Str
+   s/Keyword s/Str})
+
+(def User
+  {:name s/Str
+   :email s/Str
+   :pass s/Str})
+
+(def Comment
+  {:author User
+   :comment s/Str})
+
+(def RecipePage
+  "A map with the data for a recipe page"
+  {:recipe Recipe
+   :comments [Comment]})
+
 ;; docs at:
 ;; https://github.com/dimitri/el-get/blob/master/el-get.info for info
 
-(def Recipe
+(def Full-Recipe-Spec
   {:name s/Str
    (s/optional-key :after) s/Str
    (s/optional-key :autoloads) s/Str
@@ -38,16 +62,3 @@
    (s/optional-key :username) s/Str
    (s/optional-key :website) s/Str})
 
-(def User
-  {:name s/Str
-   :email s/Str
-   :pass s/Str})
-
-(def Comment
-  {:author User
-   :comment s/Str})
-
-(def RecipePage
-  "A map with the data for a recipe page"
-  {:recipe Recipe
-   :comments [Comment]})
