@@ -7,6 +7,7 @@
 (defroutes app-routes
   (GET "/" [] (resp/file-response "index.html" 
                                   {:root "resources/public"}))
+  (GET "/recipe/:id" [id] (str "hi " id))
   (route/resources "/")
   (route/not-found "Not Found"))
 
