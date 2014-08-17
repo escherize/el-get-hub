@@ -8,8 +8,7 @@
 (defroutes app-routes
   (GET "/" [] (resp/file-response "index.html" 
                                   {:root "resources/public"}))
-  (GET "/recipe/:id" [id] (or (recipe/page id)
-                              "Not Found"))
+  (GET "/recipe/:id" [id] (recipe/page id))
   (route/resources "/")
   (route/not-found "Not Found"))
 
