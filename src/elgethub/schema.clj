@@ -8,6 +8,7 @@
 
 (def Min-Recipe
   {:name s/Str
+   :description s/Str
    :recipe-str s/Str
    s/Keyword s/Str})
 
