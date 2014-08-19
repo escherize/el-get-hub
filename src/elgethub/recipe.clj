@@ -21,21 +21,24 @@
              ["id" "name" "recipe_str" "description"]
              [id name recipe-str description]))
 
-(defn pretty-print [recipe-str]
-  (let [kv-strs (-> recipe-str
-                    (s/split #":")
-                    (->> (map s/trim)))]
-    (str (first kv-strs) ":" (apply str (interpose "\n :" (rest kv-strs))))))
+(defn format-recipe [recipe-str]
+  (let [chopped-strs (-> recipe-str
+                         (s/split #":")
+                         (->> (map s/trim)))]
+    (str (first chopped-strs) ":"
+         (apply str (interpose
+                     "\n       :"
+                     (rest chopped-strs))))))
 
 (defn page [id]
   (when-let [{:keys [id name recipe-str description :as recipe]} (by-id id)]
-    (->> (rt/recipe {:recipe-title name
-                     :recipe-str (pretty-print recipe-str)
-                     :recipe-desc description})
+    (->> (rt/recipe {:title name
+                     :str   (format-recipe recipe-str)
+                     :desc  description})
          (apply str))))
 
 (comment
-;; Sun, Aug 17, 2014 bryan -> add tests for pp:
+  ;; Sun, Aug 17, 2014 bryan -> add tests for pp:
   (map pretty-print
        ["(:name ac-octave
           :type emacswiki
