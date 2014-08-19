@@ -12,7 +12,7 @@
   (update-keys m #(-> % name (clojure.string/replace "-" "_") keyword)))
 
 (defn by-id [id]
-  (-> (j/query config/db [ "select * from recipes where id = ?" (str id)])
+  (-> (j/query config/db ["select * from recipes where id = ?" (str id)])
       first
       kebab-keys))
 

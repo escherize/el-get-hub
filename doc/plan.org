@@ -13,7 +13,7 @@ Stable MELPA needs people to actually publish to it.
 
 ** Problem: There's nowhere to checkout all the cool el-get recipes.
 Solution: El-Get Hub, a place to share that stuff.
-
+* bitcoin donations
 * page features
 ** recipe pages -> should parse and insert el-get/recipes/*.rcp as baseline
 *** submitted by?
