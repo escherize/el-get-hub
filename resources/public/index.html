@@ -1,41 +1,42 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
-
-    <title>ElGetHub</title>
-
-    <!-- Bootstrap Core CSS -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
-    <!-- Custom CSS -->
-    <link href="css/simple-sidebar.css" rel="stylesheet">
-  </head>
-  <body>
-    <div id="wrapper">
-      <!-- Sidebar -->
-      <div id="sidebar-wrapper">
-        <ul class="sidebar-nav">
-          <li class="sidebar-brand">
-            <a href="#">
-              Start Bootstrap
-            </a>
-          </li>
-          <li>
-            <a href="#">Dashboard</a>
-          </li>
-          <li>
-            <a href="#">Shortcuts</a>
-          </li>
-          <li>
-            <a href="#">Overview</a>
-          </li>
-          <li>
-            <a href="#">Events</a>
-          </li>
+<html lang="en"/>
+<head>
+  <meta charset="utf-8"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="description" content=""/>
+  <meta name="author" content=""/>
+  <title>El-Get Hub: The place for el-get recipes.</title>
+  <!-- Bootstrap Core CSS -->
+  <link href="css/bootstrap.min.css" rel="stylesheet"/>
+  <!-- Custom CSS -->
+  <link href="css/landing-page.css" rel="stylesheet"/>
+  <!-- Custom Fonts -->
+  <link href="font-awesome-4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+  <link href="http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css"/>
+  <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+  <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+      <![endif]-->
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+    <div class="container">
+      <!-- Brand and toggle get grouped for better mobile display -->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="#">El-Get Hub</a>
+      </div>
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav navbar-right">
           <li>
             <a href="#">About</a>
           </li>
@@ -47,49 +48,142 @@
           </li>
         </ul>
       </div>
-      <!-- /#sidebar-wrapper -->
-
-      <!-- Page Content -->
-      <div id="page-content-wrapper">
-        <div class="container-fluid">
-          <div class="row">
-            <div class="col-lg-12">
-              <a href="#menu-toggle" class="btn btn-default" id="menu-toggle">Toggle Menu</a>
-              <h1>ElGetHub</h1>
-              <p>Emacs configs are brittle and fragile.<br>
-                What works on one machine will not just-work on another.<br>
-                We want an emacs that's portable, extensible, and well-documented!<br>
-                This is a recipe-based emacs package archive.<br>
-                Beginners can download the starter kit from <a href= "https://github.com/dimitri/emacs-kicker/archive/master.zip"> here </a>.</p><br>
-              <p>Emacs package managment sucks.</p>
-              <p>El-get is the answer</p>
-              <br>
-              <p></p>
-              <p></p>
-              <br>
-            </div>
+      <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+  </nav>
+  <!-- Header -->
+  <div class="intro-header">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="intro-message">
+            <h1>El-Get Hub</h1>
+            <h3>Your emacs recipe collection.</h3>
+            <hr class="intro-divider"/>
+            <ul class="list-inline intro-social-buttons">
+              <li>
+                <a href="https://twitter.com/elgethub" class="btn btn-default btn-lg"><i class="fa fa-twitter fa-fw"></i> <span class="network-name">Twitter</span></a>
+              </li>
+              <li>
+                <a href="https://github.com/escherize/el-get-hub" class="btn btn-default btn-lg"><i class="fa fa-github fa-fw"></i> <span class="network-name">Github</span></a>
+              </li>
+            </ul>
           </div>
         </div>
       </div>
-      <!-- /#page-content-wrapper -->
-
     </div>
-    <!-- /#wrapper -->
-
-    <!-- jQuery Version 1.11.0 -->
-    <script src="js/jquery-1.11.0.js"></script>
-
-    <!-- Bootstrap Core JavaScript -->
-    <script src="js/bootstrap.min.js"></script>
-
-    <!-- Menu Toggle Script -->
-    <script>
-      $("#menu-toggle").click(function(e) {
-      e.preventDefault();
-      $("#wrapper").toggleClass("toggled");
-      });
-    </script>
-
-  </body>
-
+    <!-- /.container -->
+  </div>
+  <!-- /.intro-header -->
+  <!-- Page Content -->
+  <div class="content-section-a">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-5 col-sm-6">
+          <hr class="section-heading-spacer"/>
+          <div class="clearfix"></div>
+          <h2 class="section-heading">
+            Simple and Powerful.
+          </h2>
+          <p class="lead">
+            A beginner ready, <br/>professional acclaimed<br/> system to oragnize your Emacs config
+            <!-- Use one file to hold your recipes,<br> or split however you like. -->
+          </p>
+        </div>
+        <div class="col-lg-5 col-lg-offset-2 col-sm-6">
+          <img class="img-responsive" src="img/ipad.png" alt=""/>
+        </div>
+      </div>
+    </div>
+    <!-- /.container -->
+  </div>
+  <!-- /.content-section-a -->
+  <div class="content-section-b">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-5 col-lg-offset-1 col-sm-push-6  col-sm-6">
+          <hr class="section-heading-spacer"/>
+          <div class="clearfix"></div>
+          <h2 class="section-heading">
+            Leaf through only the Best recipes.
+          </h2>
+          <p class="lead">
+            Bite-sized, modular add ons ranked by popularity, and awesomeness.
+          </p>
+        </div>
+        <div class="col-lg-5 col-sm-pull-6  col-sm-6">
+          <img class="img-responsive" src="img/dog.png" alt=""/>
+        </div>
+      </div>
+    </div>
+    <!-- /.container -->
+  </div>
+  <!-- /.content-section-b -->
+  <div class="content-section-a">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-5 col-sm-6">
+          <hr class="section-heading-spacer"/>
+          <div class="clearfix"></div>
+          <h2 class="section-heading">
+            Rock to the Solid Setup
+          </h2>
+          <p class="lead">
+            Never pull from the head of a shakey repo again.
+          </p>
+        </div>
+        <div class="col-lg-5 col-lg-offset-2 col-sm-6">
+          <img class="img-responsive" src="img/phones.png" alt=""/>
+        </div>
+      </div>
+    </div>
+    <!-- /.container -->
+  </div>
+  <!-- /.content-section-a -->
+  <div class="banner">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6">
+          <h2>Tell me when El-Get Hub is up!<i class="fa fa-line-chart"></i></h2>
+          <form action="/signup" method="post">
+            <input class="email-form" type="email" id="email" name="email" value="" placeholder="hacker@epic.com" required="required"/>
+            <input type="submit" class="submit-button" value="Holla!" id="submit-button"/>
+          </form>
+        </div>
+        <div class="col-lg-6">
+          <ul class="list-inline banner-social-buttons">
+            <li>
+              <a href="https://twitter.com/elgethub" class="btn btn-default btn-lg"><i class="fa fa-twitter fa-fw"></i> <span class="network-name">Twitter</span></a>
+            </li>
+            <li>
+              <a href="https://github.com/escherize/el-get-hub" class="btn btn-default btn-lg"><i class="fa fa-github fa-fw"></i> <span class="network-name">Github</span></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <!-- /.container -->
+  </div>
+  <!-- /.banner -->
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <ul class="list-inline">
+            <li>
+              <a href="mailto:bryan.maass@gmail.com">Contact</a>
+            </li>
+          </ul>
+          <p class="copyright text-muted small">El-Get Hub 2014. MIT License</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <!-- jQuery Version 1.11.0 -->
+  <script src="js/jquery-1.11.0.js"></script>
+  <!-- Bootstrap Core JavaScript -->
+  <script src="js/bootstrap.min.js"></script>
+</body>
 </html>
