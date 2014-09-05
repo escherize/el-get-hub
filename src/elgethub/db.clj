@@ -9,9 +9,9 @@
   (.toString x))
 
 (defn put-into-store [store map]
-  (->> (mc/insert-and-return db store
-                             (merge map {:_id (ObjectId.)}))
-       (map #(update-in % [:_id] ObjectId->str))))
+  (update-in
+   (mc/insert-and-return db store (merge map {:_id (ObjectId.)}))
+   [:_id] ObjectId->str))
 
 (defn get-from-store [store {:keys [_id] :as query-map}]
   (->> (mc/find-maps db "recipes" (if _id (merge query-map

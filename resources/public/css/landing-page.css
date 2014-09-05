@@ -126,14 +126,15 @@ h6 {
     font-family: "Lato","Helvetica Neue",Helvetica,Arial,sans-serif;
     font-weight: 700;
 		color: #333333;
-		font-size: 3em;
+		font-size: 2.5em;
+		margin-top: 15px;
 }
 
 .submit-button {
     font-family: "Lato","Helvetica Neue",Helvetica,Arial,sans-serif;
     font-weight: 700;
 		color: #333333;
-		font-size: 3em;
+		font-size: 2.5em;
 }
 
 .banner ul {
