@@ -17,7 +17,7 @@
                       {:root "resources/public"}))
 
 (defn home []
-  (static-page "index.html"))
+  (static-page "home.html"))
 
 (defn upload []
   (static-page "upload.html"))
