@@ -37,7 +37,9 @@
   (POST "/upload" [title recipe description]
         (recipe/upload {:title (or title (str "title-" recipe))
                         :recipe recipe}))
-  (GET "/search/" [])
+  (POST "/search" [title name type] (recipe/find {:title title
+                                                  :name name
+                                                  :type type}))
   (GET "/site2" [] (static-page "/home.html"))
   (route/resources "/")
   (route/not-found "Not Found"))

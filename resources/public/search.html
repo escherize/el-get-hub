@@ -23,14 +23,40 @@
       </div>
       <div class="collapse navbar-collapse" id="navbar-collapse-01">
         <ul class="nav navbar-nav">
-          <li class="active"><a href="/index.html">Home</a></li>
+          <li><a href="/index.html">Home</a></li>
           <li><a href="/recipe.html">Upload Recipes</a></li>
-          <li><a href="/search.html">Search Recipes</a></li>
+          <li class="active"><a href="/search.html">Search Recipes</a></li>
         </ul>
       </div><!-- /.navbar-collapse -->
     </nav><!-- /navbar -->
     <div class="container">
       <!-- Start Content =============================================-->
+      <form method="post" action="/search">
+        <h2>Recipe Search</h2>
+        <h5>fill in only the fields you want to search:</h5>
+        <row>
+          <label>
+            <h4>Title</h4>
+            <input type="text" name="title" class="form-control input-hg" placeholder="My Epic Recipe (w/ sauce)"/>
+          </label>
+        </row>
+        <row>
+          <label>
+            <h4>Name</h4>
+            <input type="text" name="name" class="form-control input-hg" placeholder="git-timemachine"/>
+          </label>
+        </row>
+        <row>
+          <label>
+            <h4>Type</h4>
+            <input type="text" name="type" class="form-control input-hg" placeholder="github"/>
+          </label>
+        </row>
+        <br/>
+        <row>
+          <button type="submit" class="btn btn-hg btn-primary btn-embossed">Search</button>
+        </row>
+      </form>
 
       <!-- End Content ===============================================-->
       <!-- Load JS here for greater good =============================-->

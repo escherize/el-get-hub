@@ -9,3 +9,5 @@ pom.xml.asc
 /.lein-*
 /.nrepl-port
 /pg_migrations/schema.sql
+/a.txt
+/.DS_Store

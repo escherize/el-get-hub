@@ -47,9 +47,19 @@
     :else
     (db/put-recipe (process-recipe recipe)))))
 
-(process-recipe "(:a 2
-                  :b lemons
-and shit)")
+(defn remove-empty-kvs [m]
+  (into {}
+        (for [[k v] m
+              :when (not (= "" v))]
+          [k v])))
+
+(defn find [big-query-map]
+  (let [query-map (remove-empty-kvs big-query-map)]
+    (if (= {} query-map)
+      "Please enter something :("
+      (str "<pre>"
+           (apply str (map (comp format-recipe :recipe) (db/get-recipes query-map)))
+           "</pre>"))))
 
 (comment
 
