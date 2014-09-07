@@ -11,3 +11,5 @@ pom.xml.asc
 /pg_migrations/schema.sql
 /a.txt
 /.DS_Store
+/users.txt
+/resources/.DS_Store
