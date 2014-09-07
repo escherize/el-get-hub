@@ -30,9 +30,11 @@
 
 
 (defn search-result-page [srs]
-  (str "<pre>"
-       (clojure.string/join "<br><br>" srs)
-       "</pre>"))
+  (if-not (seq srs)
+    "Sorry, no results."
+    (str "<pre>"
+         (clojure.string/join "<br><br>" srs)
+         "</pre>")))
 
 (defroutes app-routes
   (GET "/" [] (home))

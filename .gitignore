@@ -13,3 +13,4 @@ pom.xml.asc
 /.DS_Store
 /users.txt
 /resources/.DS_Store
+/resources/public/a.html
