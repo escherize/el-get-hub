@@ -28,18 +28,24 @@
   (spit "users.txt" (str email "\n") :append true)
   (home))
 
+
+(defn search-result-page [srs]
+  (str "<pre>"
+       (clojure.string/join "<br><br>" srs)
+       "</pre>"))
+
 (defroutes app-routes
   (GET "/" [] (home))
   (POST "/" [email] (post-signup email))
-  (GET "/recipe/:id" [id] (recipe/page id))
   (GET "/upload" []  (resp/file-response "/upload.html"
                                          {:root "resources/public"}))
   (POST "/upload" [title recipe description]
         (recipe/upload {:title (or title (str "title-" recipe))
                         :recipe recipe}))
-  (POST "/search" [title name type] (recipe/find {:title title
-                                                  :name name
-                                                  :type type}))
+  (GET "/search" [] #(let [search-results (recipe/find (-> (for [[k v] (:query-params %)]
+                                                             [(keyword k) v])
+                                                           (into {})))]
+                       (search-result-page search-results)))
   (GET "/site2" [] (static-page "/home.html"))
   (route/resources "/")
   (route/not-found "Not Found"))
