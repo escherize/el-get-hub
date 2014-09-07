@@ -14,7 +14,7 @@
         <![endif]-->
   </head>
   <body>
-    <nav class="navbar navbar-default navbar-static-top" role="navigation">
+    <nav class="navbar navbar-default navbar-fixed-top" role="navigation">
       <div class="navbar-header">
         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse-01">
           <span class="sr-only">Toggle navigation</span>
@@ -33,14 +33,14 @@
       <!-- start content -->
       <div class="row">
         <div class="col-lg-12">
-          <h1>ElGetHub</h1>
-          <h5>Your emacs recipe collection.</h5>
+          <h1 id="main-title">El-Get Hub</h1>
+          <h5>Community collection of el-get recipes</h5>
           <ul class="list-inline intro-social-buttons">
             <li>
-              <a href="https://twitter.com/elgethub" class="btn btn-default btn-lg"><i class="fa fa-twitter fa-fw"></i> <span class="network-name">Twitter</span></a>
+              <a href="https://twitter.com/elgethub" class="btn btn-default btn-lg btn-primary"><i class="fa fa-twitter fa-fw"></i> <span class="network-name">Twitter</span></a>
             </li>
             <li>
-              <a href="https://github.com/escherize/el-get-hub" class="btn btn-default btn-lg"><i class="fa fa-github fa-fw"></i> <span class="network-name">Github</span></a>
+              <a href="https://github.com/escherize/el-get-hub" class="btn btn-default btn-lg btn-primary"><i class="fa fa-github fa-fw"></i> <span class="network-name">Github</span></a>
             </li>
           </ul>
           <div class="content-section-a">
@@ -72,10 +72,21 @@
                   <hr class="section-heading-spacer"/>
                   <div class="clearfix"></div>
                   <h2 class="section-heading">
-                    Simple and Powerful.
+                    What's a recipe?
                   </h2>
                   <p class="lead">
-                    A beginner ready, professionally acclaimed system to organize your Emacs config. Beginners can download a starter kit from <a href= "https://github.com/dimitri/emacs-kicker/archive/master.zip"> here </a>.
+										A declarative way to describe a package, and setup for the package.
+                   <pre>
+(:name undo-tree
+       :description "Treat undo history as a tree"
+       :website "http://www.dr-qubit.org/emacs.php"
+       :type github
+       :pkgname "akhayyat/emacs-undo-tree"
+       :checkout "v1.5"
+       :after (progn
+                   (global-undo-tree-mode 1)))
+									 </pre>
+									 Notice how we can setup keybindings, and package specific config right in the recipe. Neat!
                   </p>
                 </div>
                 <div class="col-lg-5 col-sm-pull-6  col-sm-6">
@@ -93,10 +104,10 @@
                   <hr class="section-heading-spacer"/>
                   <div class="clearfix"></div>
                   <h2 class="section-heading">
-                    Rock to the Solid Setup
+                    But El-Get has recipes built in?
                   </h2>
                   <p class="lead">
-                    Never pull from the head of a shakey repo again.
+										El-Get is the best package manager for emacs by far. However there is only <em>one</em> recipe per package. So if two people modify a recipe where should it go?  In El-Get Hub!
                   </p>
                 </div>
                 <div class="col-lg-5 col-lg-offset-2 col-sm-6">
@@ -107,6 +118,13 @@
           </div>
         </div>
       </div>
+      <h1>Dude, Sweet! keep me in the loop</h1>
+      <form action="/" method="post">
+        <row>
+          <input type="email" name="email" class="form-control input-lg"/>
+          <input type="submit" value="Thank You!" class="btn-huge btn-primary"/>
+        </row>
+      </form>
     </div>
 </div>
 <!-- End Content ===============================================-->
