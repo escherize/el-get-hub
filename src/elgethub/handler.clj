@@ -4,6 +4,7 @@
             [compojure.route :as route]
             [ring.util.response :as resp]
             [elgethub.recipe :as recipe]
+            [elgethub.html :as static]
             [elgethub.db :as db]))
 
 (defn signup [r]
@@ -16,18 +17,9 @@
   (resp/file-response path
                       {:root "resources/public"}))
 
-(defn home []
-  (static-page "home.html"))
-
-(defn upload []
-  (static-page "upload.html"))
-
-(defn post-signup [email]
-  (println "post-signedup" email)
+(defn signup [email]
   (db/put-into-store "email" {:email email})
-  (spit "users.txt" (str email "\n") :append true)
   (home))
-
 
 (defn search-result-page [srs]
   (if-not (seq srs)
@@ -37,17 +29,21 @@
          "</pre>")))
 
 (defroutes app-routes
-  (GET "/" [] (home))
-  (POST "/" [email] (post-signup email))
-  (GET "/upload" []  (resp/file-response "/upload.html"
-                                         {:root "resources/public"}))
+  (GET "/"            [] (static/home-page))
+  (GET "/home.html"   [] (static/home-page))
+  (GET "/upload.html" [] (static/upload-page))
+  (GET "/search.html" [] (static/search-page))
+
+  (GET "/find" [] #(let [search-results (recipe/find (-> (for [[k v] (:query-params %)]
+                                                           [(keyword k) v])
+                                                         (into {})))]
+                     (search-result-page search-results)))
+  (POST "/" [email] (signup email))
+
   (POST "/upload" [title recipe description]
         (recipe/upload {:title (or title (str "title-" recipe))
                         :recipe recipe}))
-  (GET "/search" [] #(let [search-results (recipe/find (-> (for [[k v] (:query-params %)]
-                                                             [(keyword k) v])
-                                                           (into {})))]
-                       (search-result-page search-results)))
+
   (GET "/site2" [] (static-page "/home.html"))
   (route/resources "/")
   (route/not-found "Not Found"))
