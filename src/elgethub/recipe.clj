@@ -16,7 +16,7 @@
 
 (defn process-recipe [recipe-str]
   (conj (->>
-         (s/split recipe-str #":|[ ]+:")
+         (s/split recipe-str #":(?!//)")
          (map s/trim)
          rest
          (map (fn [kv]

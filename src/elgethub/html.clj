@@ -158,6 +158,13 @@
    [:row
     [:button.btn.btn-hg.btn-primary.btn-embossed {:type "submit"} "Search"]]])
 
+(defn search-result-content [recipes]
+  [:div
+   (for [recipe recipes]
+     [:pre recipe])])
+
+(defn search-result-page [recipes]
+  (page-template :search (search-result-content recipes)))
 
 (defn home-page []
   (page-template :home (home-content)))

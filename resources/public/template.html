@@ -31,9 +31,30 @@
     </nav><!-- /navbar -->
     <div class="container">
       <!-- Start Content =============================================-->
+			
+<pre>
+(:name gist
+       :type github
+       :pkgname "defunkt/gist.el"
+       :checkout "v1.1.0"
+       :depends (gh tabulated-list)
+       :description "Emacs integration for gist.github.com")
+</pre>
+<pre>
+(:name clojure-mode
+       :type github
+       :pkgname "clojure-emacs/clojure-mode"
+       :checkout "3.0.0"
+       :after (progn
+                   (add-hook
+                    'clojure-mode-hook
+                    (lambda ()
+                      (clj-refactor-mode 1)
+                      (define-key clj-refactor-map (kbd "M-C->") 'cljr-thread)
+                      (define-key clj-refactor-map (kbd "M-C-<") 'cljr-unwind)))))
+</pre>
 
       <!-- End Content ===============================================-->
-      <!-- Load JS here for greater good =============================-->
       <script src="js/jquery-1.8.3.min.js"></script>
       <script src="js/jquery-ui-1.10.3.custom.min.js"></script>
       <script src="js/jquery.ui.touch-punch.min.js"></script>
